@@ -35,37 +35,37 @@ public class QuizActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
-        mQuestionTextView = (TextView) findViewById(R.id.question_text_view);
+        mQuestionTextView = findViewById(R.id.question_text_view);
         mQuestionTextView.setOnClickListener(v -> {
             mCurrentIndex = (mCurrentIndex + 1) % mQuestionBank.length;
             updateQuestion();
         });
 
-        mTrueButton = (Button) findViewById(R.id.true_button);
+        mTrueButton = findViewById(R.id.true_button);
         mTrueButton.setOnClickListener(v -> checkAnswer(true));
 
-        mFalseButton = (Button) findViewById(R.id.false_button);
+        mFalseButton = findViewById(R.id.false_button);
         mFalseButton.setOnClickListener(v -> checkAnswer(false));
 
-        mNextButton = (Button) findViewById(R.id.next_button);
+        mNextButton = findViewById(R.id.next_button);
         mNextButton.setOnClickListener(v -> {
             mCurrentIndex = (mCurrentIndex + 1) % mQuestionBank.length;
             updateQuestion();
         });
 
-        mPrevButton = (Button) findViewById(R.id.prev_button);
+        mPrevButton = findViewById(R.id.prev_button);
         mPrevButton.setOnClickListener(v -> {
             mCurrentIndex = (mCurrentIndex + mQuestionBank.length - 1) % mQuestionBank.length;
             updateQuestion();
         });
 
-        mNextImageButton = (ImageButton) findViewById(R.id.next_image_button);
+        mNextImageButton = findViewById(R.id.next_image_button);
         mNextImageButton.setOnClickListener(v -> {
             mCurrentIndex = (mCurrentIndex + 1) % mQuestionBank.length;
             updateQuestion();
         });
 
-        mPrevImageButton = (ImageButton) findViewById(R.id.prev_image_button);
+        mPrevImageButton = findViewById(R.id.prev_image_button);
         mPrevImageButton.setOnClickListener(v -> {
             mCurrentIndex = (mCurrentIndex + mQuestionBank.length - 1) % mQuestionBank.length;
             updateQuestion();
